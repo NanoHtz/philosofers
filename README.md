@@ -33,20 +33,20 @@ Puedes usar : https://github.com/dantonik/42-philosophers-tester Para probar
 ---
 ## 🛠️ Compilación
 ⬇️ Descarga
+
 ```bash
-./philo 5 800 200 200
-./philo 5 800 200 200 7
-./philo 1 800 200 200
-```
 git clone https://github.com/NanoHtz/philosofers.git
 cd philosofers
+```
 
 🏗️ Compilar con Makefile
 
+```bash
 make # compila el ejecutable philo
 make re # limpia y recompila desde cero
 make clean # borra objetos
 make fclean # borra objetos y el binario
+```
 
 ## ▶️ Uso
 ## 🖨️ Salida esperada y pruebas
