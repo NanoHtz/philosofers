@@ -17,10 +17,11 @@
 ---
 
 ## Resumen
-- **Qué**: TODO_descripción_corta (1–2 frases).
+- **Qué**: Philosophers, es un proyecto en el que aprendes a manejar hilos de un mismo proceso, que comparten recursos, memoria, variables... etc
 - **Para qué**: valor que aporta (p. ej., “aprendizaje de X”, “utilidad Y”).
 - **Estado**: `alpha` / `estable` / `en progreso`.
 - **Highlights**: 3 bullets de funciones o decisiones técnicas clave.
+Puedes usar : https://github.com/dantonik/42-philosophers-tester Para probar
 
 ---
 
