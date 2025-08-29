@@ -54,9 +54,9 @@ make fclean # borra objetos y el binario
 ./philo number_of_philosophers time_to_die time_to_eat time_to_sleep [must_eat]
 ```
 Donde:<br>
-number_of_philosophers (≥1)<br>
-time_to_die: tiempo máximo desde la última comida hasta morir.<br>
-time_to_eat: tiempo que tardan en comer (con 2 tenedores).<br>
-time_to_sleep: tiempo que duermen tras comer.<br>
-must_eat (opcional): si se da, la simulación termina cuando cada filósofo ha comido al menos ese número de veces.<br>
+- number_of_philosophers (≥1)<br>
+- time_to_die: tiempo máximo desde la última comida hasta morir(ms).<br>
+- time_to_eat: tiempo que tardan en comer (con 2 tenedores)(ms).<br>
+- time_to_sleep: tiempo que duermen tras comer(ms).<br>
+- must_eat (opcional): si se da, la simulación termina cuando cada filósofo ha comido al menos ese número de veces.<br>
 ## 🖨️ Salida esperada y pruebas
