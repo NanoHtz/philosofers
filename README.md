@@ -14,13 +14,6 @@
 - [Estructura](#estructura)
 - [Instalación y uso](#instalación-y-uso)
 - [Tests](#tests)
-- [Rendimiento / Complejidad](#rendimiento--complejidad)
-- [Roadmap](#roadmap)
-- [Problemas conocidos](#problemas-conocidos)
-- [Contribuir](#contribuir)
-- [Licencia](#licencia)
-- [Autor](#autor)
-
 ---
 
 ## Resumen
