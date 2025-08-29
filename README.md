@@ -3,22 +3,7 @@
   <img src="assets/banner.svg" alt="Banner de TODO_TITULO" width="100%" />
 </p>
 
-<!-- ===================== BADGES (ajusta/borra los que no apliquen) ===================== -->
-<p align="center">
-  <img src="https://img.shields.io/github/stars/NanoHtz/TODO_REPO?style=social" alt="Stars">
-  <img src="https://img.shields.io/github/last-commit/NanoHtz/TODO_REPO?label=last%20commit&color=7aa2f7&labelColor=1a1b27" alt="Last commit">
-  <img src="https://img.shields.io/github/languages/top/NanoHtz/TODO_REPO?color=70a5fd&label=language&labelColor=1a1b27" alt="Top language">
-  <!-- CI opcional (si tienes workflow .github/workflows/build.yml):
-  <img src="https://img.shields.io/github/actions/workflow/status/NanoHtz/TODO_REPO/build.yml?label=CI&logo=githubactions&logoColor=white&labelColor=1a1b27">
-  -->
-  <img src="https://img.shields.io/github/license/NanoHtz/TODO_REPO?color=bb9af7&labelColor=1a1b27" alt="License">
-  <!-- PRs welcome:
-  <img src="https://img.shields.io/badge/PRs-welcome-70a5fd?labelColor=1a1b27">
-  -->
-</p>
-
-<h1 align="center">TODO_TITULO</h1>
-<p align="center"><i>TODO_TAGLINE — una línea que diga qué hace el proyecto y por qué importa.</i></p>
+<p align="center"><i>PHILOSOPHERS — Creación y manejo de hilos, gestion de deadlocks y mutexes.</i></p>
 
 ---
 
