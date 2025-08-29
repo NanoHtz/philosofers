@@ -33,7 +33,11 @@ Puedes usar : https://github.com/dantonik/42-philosophers-tester Para probar
 ---
 ## 🛠️ Compilación
 ⬇️ Descarga
-
+```bash
+./philo 5 800 200 200
+./philo 5 800 200 200 7
+./philo 1 800 200 200
+```
 git clone https://github.com/NanoHtz/philosofers.git
 cd philosofers
 
