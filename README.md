@@ -49,4 +49,20 @@ make fclean # borra objetos y el binario
 ```
 
 ## ▶️ Uso
+
+```bash
+./philo number_of_philosophers time_to_die time_to_eat time_to_sleep [must_eat]
+
+number_of_philosophers (≥1)
+
+time_to_die: tiempo máximo desde la última comida hasta morir.
+
+time_to_eat: tiempo que tardan en comer (con 2 tenedores).
+
+time_to_sleep: tiempo que duermen tras comer.
+
+must_eat (opcional): si se da, la simulación termina cuando cada filósofo ha comido al menos ese número de veces.
+
+
+```
 ## 🖨️ Salida esperada y pruebas
