@@ -51,10 +51,10 @@ make fclean # borra objetos y el binario
 ## ▶️ Uso
 
 ```bash
-./philo number_of_philosophers time_to_die time_to_eat time_to_sleep [must_eat]
+./philo number_of_philosophers(>=1) time_to_die(ms) time_to_eat(ms) time_to_sleep(ms) [must_eat]
 ```
 Donde:<br>
-- number_of_philosophers (≥1)<br>
+- number_of_philosophers: número de filósofos que participaran(≥1)<br>
 - time_to_die: tiempo máximo desde la última comida hasta morir(ms).<br>
 - time_to_eat: tiempo que tardan en comer (con 2 tenedores)(ms).<br>
 - time_to_sleep: tiempo que duermen tras comer(ms).<br>
