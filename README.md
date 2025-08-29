@@ -26,7 +26,9 @@ Para qué<br>
 Puedes usar : https://github.com/dantonik/42-philosophers-tester Para probar
 
 ---
-
+🛠️ Compilación
+▶️ Uso
+🖨️ Salida esperada
 ## Capturas / Demo
 <!-- Deja una o varias imágenes / GIFs; guarda en assets/ -->
 <p align="center">
@@ -36,33 +38,3 @@ Puedes usar : https://github.com/dantonik/42-philosophers-tester Para probar
 </p>
 
 ---
-
-## Stack / Dependencias
-<!-- Elige la variante que aplique y elimina la otra -->
-
-<!-- ===== Variante C / 42 ===== -->
-- **Lenguaje**: C (C99/gnu11)
-- **Build**: Makefile (`cc -Wall -Wextra -Werror`)
-- **POSIX**: `unistd.h`, `fcntl.h`, `signal.h`, etc.
-- **Opcional**: MiniLibX / pthreads / readline
-
-<!-- ===== Variante Python / Datos ===== -->
-<!--
-- **Lenguaje**: Python 3.10+
-- **Entorno**: venv / conda
-- **Paquetes**: numpy, pandas, matplotlib, scipy, scikit-learn, jupyter
--->
-
----
-
-## Estructura
-```text
-TODO_REPO/
-├─ src/              # código fuente
-├─ include/          # headers (si C)
-├─ notebooks/        # *.ipynb (si Python)
-├─ tests/            # mains de prueba o pytest
-├─ assets/           # banner.svg, capturas
-├─ Makefile          # si C/42
-├─ requirements.txt  # si Python
-└─ README.md
