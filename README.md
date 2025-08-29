@@ -16,11 +16,12 @@
 - [Tests](#tests)
 ---
 
-## Resumen
-- **Qué**: Philosophers, es un proyecto en el que aprendes a manejar hilos de un mismo proceso, que comparten recursos, memoria, variables... etc
-- **Para qué**: valor que aporta (p. ej., “aprendizaje de X”, “utilidad Y”).
-- **Estado**: `alpha` / `estable` / `en progreso`.
-- **Highlights**: 3 bullets de funciones o decisiones técnicas clave.
+✅ Resumen del proyecto
+Philosophers simula a N filósofos sentados alrededor de una mesa. Cada filósofo alterna entre pensar, comer y dormir. Para comer, necesita dos tenedores (izquierdo y derecho). Los tenedores son recursos compartidos, modelados con mutexes. El objetivo es que la simulación no entre en deadlock (todos esperando indefinidamente), evite starvation (nadie se queda sin comer indefinidamente), y mantenga la precisión de tiempos dada por los parámetros.
+
+Para qué
+** Que se aprende ??
+** Que valor aporta??
 Puedes usar : https://github.com/dantonik/42-philosophers-tester Para probar
 
 ---
