@@ -27,9 +27,6 @@ Philosophers simula a N filósofos sentados alrededor de una mesa. Cada filósof
 - **Prevención de deadlocks** y **starvation** (orden par/impar, caso N=1, monitor).
 - **Temporización en ms**: `gettimeofday` + sleep activo a intervalos cortos.
 - Debug y calidad: manejo de errores, `valgrind`/sanitizers, destrucción ordenada de mutexes.
-
-Puedes usar : https://github.com/dantonik/42-philosophers-tester Para probar
-
 ---
 ## 🛠️ Compilación
 ⬇️ Descarga
@@ -77,3 +74,5 @@ Ejemplo:
 ...
 803 4 died
 ```
+Pruebas:
+- Puedes usar : https://github.com/dantonik/42-philosophers-tester Para probar
