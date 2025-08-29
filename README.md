@@ -32,5 +32,17 @@ Puedes usar : https://github.com/dantonik/42-philosophers-tester Para probar
 
 ---
 ## 🛠️ Compilación
+⬇️ Descarga
+
+git clone https://github.com/NanoHtz/philosofers.git
+cd philosofers
+
+🏗️ Compilar con Makefile
+
+make # compila el ejecutable philo
+make re # limpia y recompila desde cero
+make clean # borra objetos
+make fclean # borra objetos y el binario
+
 ## ▶️ Uso
 ## 🖨️ Salida esperada y pruebas
