@@ -59,4 +59,21 @@ Donde:<br>
 - time_to_eat: tiempo que tardan en comer (con 2 tenedores)(ms).<br>
 - time_to_sleep: tiempo que duermen tras comer(ms).<br>
 - must_eat (opcional): si se da, la simulación termina cuando cada filósofo ha comido al menos ese número de veces.<br>
+
 ## 🖨️ Salida esperada y pruebas
+
+Sale en este formato:
+
+```bash
+<timestamp_ms> <id_filo> <acción>
+```
+Ejemplo:
+```bash
+0 1 is thinking
+1 2 is thinking
+2 1 has taken a fork
+3 1 has taken a fork
+3 1 is eating
+...
+803 4 died
+```
