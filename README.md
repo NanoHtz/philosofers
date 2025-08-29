@@ -19,9 +19,10 @@
 ✅ Resumen del proyecto<br>
 Philosophers simula a N filósofos sentados alrededor de una mesa. Cada filósofo alterna entre pensar, comer y dormir. Para comer, necesita dos tenedores (izquierdo y derecho). Los tenedores son recursos compartidos, modelados con mutexes. El objetivo es que la simulación no entre en deadlock (todos esperando indefinidamente), evite starvation (nadie se queda sin comer indefinidamente), y mantenga la precisión de tiempos dada por los parámetros.
 
-Para qué
+Para qué<br>
 ** Que se aprende ??
 ** Que valor aporta??
+<br>
 Puedes usar : https://github.com/dantonik/42-philosophers-tester Para probar
 
 ---
