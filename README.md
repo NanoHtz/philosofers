@@ -3,7 +3,7 @@
   <img src="assets/banner.svg" alt="Banner de TODO_TITULO" width="100%" />
 </p>
 
-<p align="center"><i>PHILOSOPHERS — Creación y manejo de hilos, gestion de deadlocks y mutexes.</i></p>
+<p align="center"><i>🧠 Philosophers (42 Cursus) — Solución al clásico "Dining Philosophers Problem" con threads y mutexes, evitando deadlocks race conditions y starvation.</i></p>
 
 ---
 
