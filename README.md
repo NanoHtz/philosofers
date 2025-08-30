@@ -96,4 +96,5 @@ Te dejo algunos test básicos para que puedas probar:
 ./philo 5 200 300 100					-> Caso límite (eat > die); debe morir alguien (un único “died”)
 ./philo 5 10 100 100					-> Muerte muy rápida; un “died” y es la última línea
 ```
-- Puedes usar : https://github.com/dantonik/42-philosophers-tester Para probar
+Si pasas estas pruebas satisfactoriamente te animo a utilizar el tester, realiza pruebas de deadlock, starvation y demas:
+- https://github.com/dantonik/42-philosophers-tester
