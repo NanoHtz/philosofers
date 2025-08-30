@@ -87,7 +87,7 @@ Te dejo algunos test básicos para que puedas probar:
 ./philo 5 2147483648 200 200			-> Overflow / fuera de rango; error por stderr y exit code ≠ 0
 ./philo " 5" 800 200 200				-> Entrada con espacio; según tu política, normalmente error “Only digits”
 ./philo 2 800 200 200					-> Sin must_eat; nadie muere y la simulación no termina sola (no debe aparecer “died”)
-./philo 1 300 100 100					-> Caso 1 filósofo; puede “has taken a fork” y luego un único “died” (~300 ms); jamás “is eating/sleeping/thinking”
+./philo 1 300 100 100					-> Caso 1 filósofo; puede “has taken a fork” y luego un único “died” (~300 ms);
 ./philo 5 10 100 100					-> time_to_die muy bajo; debe aparecer un único “died” y ser la última línea
 ./philo 50 1000 100 100					-> Escalabilidad; muchos hilos, sin muertes y sin terminar solo
 ./philo 50 1000 100 100 1				-> must_eat=1; termina cuando todos comen una vez; cero “died”
