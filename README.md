@@ -33,7 +33,7 @@ Philosophers simula a N filósofos sentados alrededor de una mesa. Cada filósof
 
 <a id="explicacion"></a>
 <details>
-  <summary><b>📝 Explicación</b></summary>
+  <summary><h3>📝 Explicación</h3></summary>
 
   <!-- Pon aquí tu explicación técnica: 
        - Modelo de hilos: un hilo por filósofo + 1 monitor (si usas monitor).
@@ -120,3 +120,13 @@ Te dejo algunos test básicos para que puedas probar:
 ```
 Si pasas estas pruebas satisfactoriamente te animo a utilizar el tester, realiza pruebas de deadlock, starvation y demas:
 - https://github.com/dantonik/42-philosophers-tester
+
+# Valgrind (memcheck): sin fugas ni "still reachable" (idealmente 0)
+valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./philo 5 800 200 200 3
+
+# Helgrind (condiciones de carrera y bloqueos): no debería reportar "Possible data race" ni "Lock order" issues
+valgrind --tool=helgrind ./philo 5 800 200 200 3
+
+# DRD (alternativa a helgrind; también detecta data races)
+valgrind --tool=drd ./philo 5 800 200 200 3
+
