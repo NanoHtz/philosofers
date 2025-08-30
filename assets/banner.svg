@@ -1,6 +1,6 @@
 <!-- assets/banner.svg | philosophers -->
 <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-labelledby="t d">
-  <title id="t">philosophers — Dining Philosophers in C (threads &amp; mutexes)</title>
+  <title id="t">Philosophers — Dining Philosophers in C (threads &amp; mutexes)</title>
   <desc id="d">Banner oscuro con mesa redonda, 5 filósofos y tenedores entre ellos; estados think/eat/sleep.</desc>
 
   <defs>
