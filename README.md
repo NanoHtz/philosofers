@@ -30,6 +30,7 @@ Philosophers simula a N filósofos sentados alrededor de una mesa. Cada filósof
 - **Prevención de deadlocks** y **starvation**.
 - **Temporización en ms**: `gettimeofday` + sleep activo a intervalos cortos.
 ---
+
 <a id="explicacion"></a>
 <details>
   <summary><b>📝 Explicación</b></summary>
@@ -43,7 +44,9 @@ Philosophers simula a N filósofos sentados alrededor de una mesa. Cada filósof
   -->
 
 </details>
+
 ---
+
 <a id="compilacion"></a>
 ## 🛠️ Compilación
 ⬇️ Descarga
