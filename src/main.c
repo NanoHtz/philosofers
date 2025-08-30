@@ -20,7 +20,7 @@ void	create_and_join(t_table *table, t_philosopher *philos)
 	while (i < table->num_philosophers)
 	{
 		pthread_create(&philos[i].thread_id, NULL, routine, &philos[i]);
-		usleep(10000);
+		usleep(200);
 		i++;
 	}
 	usleep(1000);
@@ -38,7 +38,6 @@ int	main(int ac, char **av)
 	t_table			*table;
 	t_philosopher	*philos;
 
-	//set_debug(1); /* [ADDED] activar debug por código */
 	if (check_args(ac, av) == -1)
 		return (-1);
 	table = init_table(ac, av);

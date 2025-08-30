@@ -48,3 +48,25 @@ void	print_action(t_philosopher *philo, char *msg)
 	printf("%ld %d %s\n", ft_time(philo), philo->id + 1, msg);
 	pthread_mutex_unlock(&philo->table->print_mutex);
 }
+
+int	check_args(int ac, char **av)
+{
+	int		i;
+	long	nbr;
+
+	i = 1;
+	if (ac != 5 && ac != 6)
+		return (ft_perror(E_ARGS, -1));
+	while (i < ac)
+	{
+		if (is_number(av[i]) != 0)
+			return (ft_perror(E_SIGN, -1));
+		nbr = ft_atol(av[i]);
+		if ((nbr <= 0) || nbr > INT_MAX)
+			return (ft_perror(E_RANGE, -1));
+		if (i == 1 && nbr < 1)
+			return (ft_perror(E_PHILO, -1));
+		i++;
+	}
+	return (0);
+}

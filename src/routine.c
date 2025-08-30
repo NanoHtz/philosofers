@@ -25,14 +25,13 @@ void	*one_philo(t_philosopher *philo, t_table *t)
 	return (NULL);
 }
 
-/* [ADDED] Desfase para N impar: reparte turnos (evita hambre al inicio de cada ciclo) */
-static void	stagger_if_odd(t_philosopher *philo)
+void	stagger_if_odd(t_philosopher *philo)
 {
 	t_table	*t;
 	long	start;
 
 	t = philo->table;
-	if ((t->num_philosophers % 2) == 1 && (philo->id % 2) == 0)  /* pares se desfasan */
+	if ((t->num_philosophers % 2) == 1 && (philo->id % 2) == 0)
 	{
 		start = get_time();
 		while (get_died(t) && get_time() - start < (t->time_to_eat / 2))
@@ -40,14 +39,12 @@ static void	stagger_if_odd(t_philosopher *philo)
 	}
 }
 
-/* [ADDED] Desfase de primera vuelta para N PAR (evita colisión exacta) */
-static void	stagger_even_first_turn(t_philosopher *philo)
+void	stagger_even_first_turn(t_philosopher *philo)
 {
 	t_table	*t;
 	long	start;
 
 	t = philo->table;
-	/* pares se desfasan media comida SOLO si aún no han comido */
 	if ((t->num_philosophers % 2) == 0
 		&& (philo->id % 2) == 1
 		&& philo->meals_eaten == 0)
@@ -56,6 +53,16 @@ static void	stagger_even_first_turn(t_philosopher *philo)
 		while (get_died(t) && get_time() - start < (t->time_to_eat / 2))
 			usleep(100);
 	}
+}
+
+void	routine_loop(t_philosopher	*philo)
+{
+	stagger_even_first_turn(philo);
+	stagger_if_odd(philo);
+	take_forks(philo);
+	eat(philo);
+	unlock_forks(philo);
+	sleep_and_think(philo);
 }
 
 void	*routine(void *arg)
@@ -79,14 +86,7 @@ void	*routine(void *arg)
 		pthread_mutex_unlock(&philo->meal_mutex);
 		if (t->num_philosophers == 1)
 			return (one_philo(philo, t));
-		//dbg_event(philo, "before_take");
-		stagger_even_first_turn(philo);     /* [ADDED] */
-		stagger_if_odd(philo);
-		take_forks(philo);
-		eat(philo);
-		//dbg_event(philo, "after_eat");
-		unlock_forks(philo);
-		sleep_and_think(philo);
+		routine_loop(philo);
 	}
 	return (NULL);
 }

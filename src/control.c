@@ -30,7 +30,7 @@ void	start_control(t_philosopher	*philos)
 	pthread_detach(control_thread);
 }
 
-static int	loop(t_philosopher *philos, t_table *table)
+int	loop(t_philosopher *philos, t_table *table)
 {
 	int	i;
 	int	full;
@@ -48,7 +48,7 @@ static int	loop(t_philosopher *philos, t_table *table)
 	return (full == table->num_philosophers);
 }
 
-static int	loop_2(t_philosopher *philos, t_table *table)
+int	loop_2(t_philosopher *philos, t_table *table)
 {
 	int		i;
 	long	now;
@@ -63,7 +63,6 @@ static int	loop_2(t_philosopher *philos, t_table *table)
 			set_died(table);
 			print_action(&philos[i], "died");
 			pthread_mutex_unlock(&philos[i].meal_mutex);
-			dbg_snapshot(philos, table, "DEAD_DETECTED");
 			return (1);
 		}
 		pthread_mutex_unlock(&philos[i].meal_mutex);
@@ -83,7 +82,6 @@ void	*control_routine(void *arg)
 	{
 		if (table->must_eat > 0 && loop(philos, table))
 		{
-			dbg_snapshot(philos, table, "ALL_REACHED");
 			set_died(table);
 			return (NULL);
 		}

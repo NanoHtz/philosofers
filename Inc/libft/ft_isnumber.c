@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sleep_and_think.c                                  :+:      :+:    :+:   */
+/*   is_number.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgalvez- <fgalvez-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/01 10:32:40 by fgalvez-          #+#    #+#             */
-/*   Updated: 2025/07/01 10:32:40 by fgalvez-         ###   ########.fr       */
+/*   Created: 2025/08/30 13:19:18 by fgalvez-          #+#    #+#             */
+/*   Updated: 2025/08/30 13:19:18 by fgalvez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../Inc/philosophers.h"
+#include "libft.h"
 
-void	sleep_and_think(t_philosopher *philo)
+int	is_number(char *av)
 {
-	long	start;
+	int	i;
 
-	if (get_died(philo->table))
-		print_action(philo, "is sleeping");
-	start = get_time();
-	while (get_died(philo->table)
-		&& get_time() - start < philo->table->time_to_sleep)
-		usleep(100);
-	if (get_died(philo->table))
-		print_action(philo, "is thinking");
+	i = 0;
+	if (av[0] == '\0')
+		return (ft_perror(E_EMPTY, -1));
+	while (av[i] != '\0')
+	{
+		if (ft_isdigit(av[i]) != 1)
+			return (-1);
+		i++;
+	}
+	return (0);
 }

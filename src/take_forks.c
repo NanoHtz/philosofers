@@ -12,98 +12,81 @@
 
 #include "../Inc/philosophers.h"
 
-void	unlock_fork(t_philosopher *philo, int fork_index)
+void	set_even_order(t_philosopher *p, int *f1, int *f2)
 {
-	pthread_mutex_unlock(&philo->table->forks[fork_index]);
-	if (get_died(philo->table))
-		print_action(philo, "put down a fork");
-}
-
-int	lock_fork(t_philosopher *philo, int fork_index)
-{
-	if (!get_died(philo->table))
-		return (0);
-	pthread_mutex_lock(&philo->table->forks[fork_index]);
-	if (!get_died(philo->table))
+	if (p->id % 2 == 0)
 	{
-		pthread_mutex_unlock(&philo->table->forks[fork_index]);
-		return (0);
+		*f1 = p->left_fork;
+		*f2 = p->right_fork;
 	}
-	print_action(philo, "has taken a fork");
-	return (1);
+	else
+	{
+		*f1 = p->right_fork;
+		*f2 = p->left_fork;
+	}
 }
 
-/* [CHANGED] Orden híbrido:
-   - N PAR  -> par/impar (estable para 4 filósofos)
-   - N IMPAR-> índice menor primero (reduce hambre en 5 filósofos)
-*/
+static void	set_odd_order(t_philosopher *p, int *f1, int *f2)
+{
+	if (p->left_fork < p->right_fork)
+	{
+		*f1 = p->left_fork;
+		*f2 = p->right_fork;
+	}
+	else
+	{
+		*f1 = p->right_fork;
+		*f2 = p->left_fork;
+	}
+}
+
+static void	set_fork_order(t_philosopher *p, int *f1, int *f2)
+{
+	if ((p->table->num_philosophers % 2) == 0)
+		set_even_order(p, f1, f2);
+	else
+		set_odd_order(p, f1, f2);
+}
+
+static int	acquire_both_forks(t_philosopher *p, int f1, int f2)
+{
+	t_table	*t;
+
+	t = p->table;
+	while (get_died(t))
+	{
+		if (!lock_fork(p, f1))
+			return (0);
+		if (pthread_mutex_trylock(&t->forks[f2]) == 0)
+		{
+			if (!get_died(t))
+			{
+				pthread_mutex_unlock(&t->forks[f2]);
+				pthread_mutex_unlock(&t->forks[f1]);
+				return (0);
+			}
+			print_action(p, "has taken a fork");
+			return (1);
+		}
+		pthread_mutex_unlock(&t->forks[f1]);
+		usleep(800);
+	}
+	return (0);
+}
+
 void	take_forks(t_philosopher *philo)
 {
-	int			f1;
-	int			f2;
-	t_table		*t;
+	int		f1;
+	int		f2;
+	t_table	*t;
 
 	t = philo->table;
 	if (t->num_philosophers == 1)
 	{
-		/* [UNCHANGED] caso N=1: el monitor detectará la muerte */
 		lock_fork(philo, philo->left_fork);
 		return ;
 	}
-	/* [CHANGED] selección de orden según paridad de N */
-	if ((t->num_philosophers % 2) == 0)
-	{
-		/* [CHANGED] N PAR: orden par/impar */
-		if (philo->id % 2 == 0)
-		{
-			f1 = philo->left_fork;
-			f2 = philo->right_fork;
-		}
-		else
-		{
-			f1 = philo->right_fork;
-			f2 = philo->left_fork;
-		}
-	}
-	else
-	{
-		/* [CHANGED] N IMPAR: índice menor primero */
-		if (philo->left_fork < philo->right_fork)
-		{
-			f1 = philo->left_fork;
-			f2 = philo->right_fork;
-		}
-		else
-		{
-			f1 = philo->right_fork;
-			f2 = philo->left_fork;
-		}
-	}
-	/* [UNCHANGED] coger f1 y luego f2 (bloqueante) */
-	if (!lock_fork(philo, f1))
+	set_fork_order(philo, &f1, &f2);
+	if (!acquire_both_forks(philo, f1, f2))
 		return ;
-	if (!lock_fork(philo, f2))
-	{
-		pthread_mutex_unlock(&t->forks[f1]);
-		return ;
-	}
-}
-
-void	unlock_forks(t_philosopher *philo)
-{
-	if (philo->table->num_philosophers == 1)
-	{
-		unlock_fork(philo, philo->left_fork);
-		return ;
-	}
-	if (philo->id % 2 == 0)
-	{
-		unlock_fork(philo, philo->left_fork);
-		unlock_fork(philo, philo->right_fork);
-	}
-	else
-	{
-		unlock_fork(philo, philo->right_fork);
-		unlock_fork(philo, philo->left_fork);
-	}
 }

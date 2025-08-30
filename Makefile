@@ -6,7 +6,7 @@
 #    By: fgalvez- <fgalvez-@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/08 14:04:17 by fgalvez-          #+#    #+#              #
-#    Updated: 2025/08/30 11:01:07 by fgalvez-         ###   ########.fr        #
+#    Updated: 2025/08/30 13:26:20 by fgalvez-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 
 NAME         = philo
 CC           = cc
-CFLAGS       = -Wall -Wextra -Werror -g -O0 -DPHILO_DEBUG
+CFLAGS       = -Wall -Wextra -Werror -g -O0
 
 LIBS_FLAGS   = -L$(DIR_LIBFT) -lft \
                -L$(DIR_UTILS) -lutils \
@@ -37,16 +37,13 @@ HEADERS = $(DIR_UTILS)errors.h \
 			$(DIR_LIBFT)libft.h
 
 SOURCES = $(DIRSOURCE)main.c \
-			$(DIRSOURCE)check_args.c \
 			$(DIRSOURCE)inits.c \
 			$(DIRSOURCE)routine.c \
 			$(DIRSOURCE)utils.c \
 			$(DIRSOURCE)take_forks.c \
-			$(DIRSOURCE)eat.c \
-			$(DIRSOURCE)frees.c \
-			$(DIRSOURCE)sleep_and_think.c \
-			$(DIRSOURCE)debugs.c \
-			$(DIRSOURCE)control.c
+			$(DIRSOURCE)sleep_think_eat.c \
+			$(DIRSOURCE)control.c \
+			$(DIRSOURCE)lock_unlock.c
 
 
 # ========================= OBJETOS =========================== #

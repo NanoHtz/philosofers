@@ -31,7 +31,9 @@ SRCS         = ft_isdigit.c \
 				ft_atoi.c \
 				ft_perror.c \
 				ft_atol.c \
-				ft_putstr.c
+				ft_putstr.c \
+				ft_isnumber.c
+
 SRCS         := $(addprefix $(DIR_SRC)/,$(SRCS))
 
 OBJS         = $(addprefix $(DIR_OBJ),$(notdir $(SRCS:.c=.o)))

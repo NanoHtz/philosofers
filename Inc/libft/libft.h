@@ -17,10 +17,13 @@
 # include <unistd.h>
 # include <limits.h>
 
+# define E_EMPTY "La cadena esta vacía"
+
 int		ft_isdigit(int x);
 int		ft_atoi(const char *nptr);
 long	ft_atol(const char *nptr);
 int		ft_perror(char *str, int n);
 void	ft_putstr(char *str);
+int		is_number(char *av);
 
 #endif

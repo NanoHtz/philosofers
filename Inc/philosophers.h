@@ -51,30 +51,27 @@ typedef struct s_philosopher
 	t_table			*table;
 	pthread_t		thread_id;
 }	t_philosopher;
-//debugs.c
-void    set_debug(int on);  /* [ADDED] 1 = ON, 0 = OFF */
-void    dbg_event(t_philosopher *p, const char *evt);                /* [ADDED] */
-void    dbg_snapshot(t_philosopher *ph, t_table *t, const char *tag);/* [ADDED] */
-//check_args.c
-int				is_number(char *av);
-int				check_args(int ac, char **av);
+
 //inits.c
 t_table			*init_table(int ac, char **av);
 t_philosopher	*init_philosophers(t_table *table);
-//frees.c
 void			free_philo(t_table *table, t_philosopher *philos);
 void			free_table(t_table *table);
-
+//routine.c
+void			*routine(void *arg);
+void			routine_loop(t_philosopher	*philo);
+void			stagger_even_first_turn(t_philosopher *philo);
+void			stagger_if_odd(t_philosopher *philo);
+void			*one_philo(t_philosopher *philo, t_table *t);
 //control.c
 int				get_died(t_table *table);
 void			start_control(t_philosopher	*philos);
 void			*control_routine(void *arg);
-//eat.c
-void			eat(t_philosopher *philo);
-//routine.c
-void			*routine(void *arg);
-//sleep_and_think.c
+int				loop(t_philosopher *philos, t_table *table);
+int				loop_2(t_philosopher *philos, t_table *table);
+//sleep_think_eat.c
 void			sleep_and_think(t_philosopher *philo);
+void			eat(t_philosopher *philo);
 //take_forks.c
 void			unlock_fork(t_philosopher *philo, int fork_index);
 int				lock_fork(t_philosopher *philo, int fork_index);
@@ -85,5 +82,6 @@ void			set_died(t_table *table);
 long			get_time(void);
 long			ft_time(t_philosopher *philo);
 void			print_action(t_philosopher *philo, char *msg);
+int				check_args(int ac, char **av);
 
 #endif

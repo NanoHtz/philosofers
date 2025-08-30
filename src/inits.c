@@ -64,3 +64,25 @@ t_philosopher	*init_philosophers(t_table *table)
 	}
 	return (philos);
 }
+
+void	free_philo(t_table *table, t_philosopher *philos)
+{
+	int	i;
+
+	i = 0;
+	while (i < table->num_philosophers)
+		pthread_mutex_destroy(&philos[i++].meal_mutex);
+	free(philos);
+}
+
+void	free_table(t_table *table)
+{
+	int	i;
+
+	i = 0;
+	while (i < table->num_philosophers)
+		pthread_mutex_destroy(&table->forks[i++]);
+	pthread_mutex_destroy(&table->print_mutex);
+	free(table->forks);
+	free(table);
+}
