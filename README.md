@@ -9,16 +9,19 @@
 
 ## Índice
 - [Resumen](#resumen)
-- [Capturas / Demo](#capturas--demo)
-- [Stack / Dependencias](#stack--dependencias)
-- [Estructura](#estructura)
-- [Instalación y uso](#instalación-y-uso)
-- [Tests](#tests)
+- [¿Para qué?](#para-que)
+- [Explicación](#explicacion)
+- [Compilación](#compilacion)
+- [Uso](#uso)
+- [Salida esperada y pruebas](#salida)
+
 ---
+<a id="resumen"></a>
 ## ✅ Resumen del proyecto<br>
 
 Philosophers simula a N filósofos sentados alrededor de una mesa. Cada filósofo alterna entre pensar, comer y dormir. Para comer, necesita dos tenedores (izquierdo y derecho). Los tenedores son recursos compartidos, modelados con mutexes. El objetivo es que la simulación no entre en deadlock (todos esperando indefinidamente), evite starvation (nadie se queda sin comer indefinidamente), y mantenga la precisión de tiempos dada por los parámetros.
 
+<a id="para-que"></a>
 ## 🧩 ¿Para qué?
 
 **¿Qué se aprende?**
@@ -27,9 +30,11 @@ Philosophers simula a N filósofos sentados alrededor de una mesa. Cada filósof
 - **Prevención de deadlocks** y **starvation**.
 - **Temporización en ms**: `gettimeofday` + sleep activo a intervalos cortos.
 ---
+<a id="explicacion"></a>
 ## Explicación
 
 ---
+<a id="compilacion"></a>
 ## 🛠️ Compilación
 ⬇️ Descarga
 
@@ -46,7 +51,7 @@ make re # limpia y recompila desde cero
 make clean # borra objetos
 make fclean # borra objetos y el binario
 ```
-
+<a id="uso"></a>
 ## ▶️ Uso
 
 ```bash
@@ -59,6 +64,7 @@ Donde:<br>
 - time_to_sleep: tiempo que duermen tras comer(ms).<br>
 - must_eat (opcional): si se da, la simulación termina cuando cada filósofo ha comido al menos ese número de veces.<br>
 
+<a id="salida"></a>
 ## 🖨️ Salida esperada y pruebas
 
 Sale en este formato:
