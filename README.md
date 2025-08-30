@@ -86,13 +86,13 @@ Te dejo algunos test básicos para que puedas probar:
 ./philo 5 2147483647 200 200			-> Límite superior válido; la simulación arranca correctamente
 ./philo 5 2147483648 200 200			-> Overflow / fuera de rango; error por stderr y exit code ≠ 0
 ./philo " 5" 800 200 200				-> Entrada con espacio; según tu política, normalmente error “Only digits”
-./philo 2 800 200 200					-> Sin must_eat; nadie muere y la simulación no termina sola (no debe aparecer “died”)
+./philo 2 800 200 200					-> Sin must_eat; nadie muere y la simulación no termina sola
 ./philo 1 300 100 100					-> Caso 1 filósofo; puede “has taken a fork” y luego un único “died” (~300 ms);
 ./philo 5 10 100 100					-> time_to_die muy bajo; debe aparecer un único “died” y ser la última línea
 ./philo 50 1000 100 100					-> Escalabilidad; muchos hilos, sin muertes y sin terminar solo
 ./philo 50 1000 100 100 1				-> must_eat=1; termina cuando todos comen una vez; cero “died”
 ./philo 5 800 200 200 3					-> Debe finalizar cuando todos coman 3 veces; cero “died”;
-./philo 5 310 200 200					-> Debe morir uno alrededor de 310 ms (± margen); “died” debe ser la última línea
+./philo 5 310 200 200					-> Debe morir uno alrededor de 310 ms (± margen);
 ./philo 5 200 300 100					-> Caso límite (eat > die); debe morir alguien (un único “died”)
 ./philo 5 10 100 100					-> Muerte muy rápida; un “died” y es la última línea
 ```
