@@ -31,8 +31,18 @@ Philosophers simula a N filósofos sentados alrededor de una mesa. Cada filósof
 - **Temporización en ms**: `gettimeofday` + sleep activo a intervalos cortos.
 ---
 <a id="explicacion"></a>
-## Explicación
+<details>
+  <summary><b>📝 Explicación</b></summary>
 
+  <!-- Pon aquí tu explicación técnica: 
+       - Modelo de hilos: un hilo por filósofo + 1 monitor (si usas monitor).
+       - Política de tomar tenedores (izq/dcha) y cómo evitas deadlock.
+       - Estructuras: estado compartido, mutex por tenedor, mutex de impresión, etc.
+       - Temporización: cómo mides ms y cómo haces sleeps cortos activos.
+       - Criterios de fin: muerte, must_eat, orden de salida.
+  -->
+
+</details>
 ---
 <a id="compilacion"></a>
 ## 🛠️ Compilación
