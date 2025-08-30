@@ -20,7 +20,7 @@
 
   <!-- texto -->
   <g transform="translate(64,112)">
-    <text class="title">philosophers</text>
+    <text class="title">Philosophers</text>
     <text class="tag" y="48">Threads · Mutexes · Deadlock avoidance · Timing</text>
     <text class="tag" y="78">C · Precise timings &amp; state machine</text>
   </g>
