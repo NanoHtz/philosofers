@@ -23,10 +23,9 @@ Philosophers simula a N filósofos sentados alrededor de una mesa. Cada filósof
 
 **¿Qué se aprende?**
 - Concurrencia en C con `pthreads`: creación/joineo de hilos, diseño de rutinas.
-- **Sincronización** con `mutex`: proteger estados y serializar la salida.
-- **Prevención de deadlocks** y **starvation** (orden par/impar, caso N=1, monitor).
+- **Sincronización** con `mutex`: proteger estados.
+- **Prevención de deadlocks** y **starvation**.
 - **Temporización en ms**: `gettimeofday` + sleep activo a intervalos cortos.
-- Debug y calidad: manejo de errores, `valgrind`/sanitizers, destrucción ordenada de mutexes.
 ---
 ## 🛠️ Compilación
 ⬇️ Descarga
@@ -75,4 +74,26 @@ Ejemplo:
 803 4 died
 ```
 Pruebas:
+Te dejo algunos test básicos para que puedas probar:
+```bash
+./philo									-> Faltan argumentos (requiere 4 o 5 parámetros); debe imprimir error por stderr y salir con exit code ≠ 0
+./philo 1 2 3							-> Faltan argumentos (requiere 4 o 5 parámetros); debe imprimir error por stderr y exit code ≠ 0
+./philo foo 800 200 200					-> Entrada no numérica; debe rechazar con “Only digits” (o equivalente) por stderr y exit code ≠ 0
+./philo -5 800 200 200					-> Signo no permitido si exiges “solo dígitos”; debe rechazar por stderr y exit code ≠ 0
+./philo 0 800 200 200					-> Valor fuera de rango (número de filósofos debe ser ≥ 1); error por stderr y exit code ≠ 0
+./philo 5 800 200 200 300 400			-> Demasiados argumentos; error por stderr y exit code ≠ 0
+./philo 5 0 200 200						-> time_to_die debe ser > 0; error de rango por stderr y exit code ≠ 0
+./philo 5 2147483647 200 200			-> Límite superior válido; la simulación arranca correctamente
+./philo 5 2147483648 200 200			-> Overflow / fuera de rango; error por stderr y exit code ≠ 0
+./philo " 5" 800 200 200				-> Entrada con espacio; según tu política, normalmente error “Only digits” y exit code ≠ 0
+./philo 2 800 200 200					-> Sin must_eat; nadie muere y la simulación no termina sola (no debe aparecer “died”)
+./philo 1 300 100 100					-> Caso 1 filósofo; puede “has taken a fork” y luego un único “died” (~300 ms); jamás “is eating/sleeping/thinking”
+./philo 5 10 100 100					-> time_to_die muy bajo; debe aparecer un único “died” y ser la última línea
+./philo 50 1000 100 100					-> Escalabilidad; muchos hilos, sin muertes y sin terminar solo
+./philo 50 1000 100 100 1				-> must_eat=1; termina cuando todos comen una vez; cero “died” y exit code 0
+./philo 5 800 200 200 3					-> Debe finalizar cuando todos coman 3 veces; cero “died”; comprobar exit 0 con ${PIPESTATUS[0]}
+./philo 5 310 200 200					-> Debe morir uno alrededor de 310 ms (± margen); “died” debe ser la última línea
+./philo 5 200 300 100					-> Caso límite (eat > die); debe morir alguien (un único “died”)
+./philo 5 10 100 100					-> Muerte muy rápida; un “died” y es la última línea
+```
 - Puedes usar : https://github.com/dantonik/42-philosophers-tester Para probar
