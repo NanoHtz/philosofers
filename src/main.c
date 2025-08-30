@@ -12,41 +12,47 @@
 
 #include "../Inc/philosophers.h"
 
-int	is_number(char *av)
+void	create_and_join(t_table *table, t_philosopher *philos)
 {
 	int	i;
 
 	i = 0;
-	while (av[i] != '\0')
+	while (i < table->num_philosophers)
 	{
-		if (ft_isdigit(av[i]) != 1)
-			return (-1);
+		pthread_create(&philos[i].thread_id, NULL, routine, &philos[i]);
+		usleep(10000);
 		i++;
 	}
-	return (0);
-}
-
-int	check_args(int ac, char **av)
-{
-	int	i;
-
-	i = 1;
-	if (ac != 5)
-		return (-1);
-	while (i < ac)
+	usleep(1000);
+	start_control(philos);
+	i = 0;
+	while (i < table->num_philosophers)
 	{
-		if (is_number(av[i]) != 0)
-			return (-1);
-		printf("El argumento %d es: %s.\n", i, av[i]);
+		pthread_join(philos[i].thread_id, NULL);
 		i++;
 	}
-	return (0);
 }
 
 int	main(int ac, char **av)
 {
+	t_table			*table;
+	t_philosopher	*philos;
+
+	//set_debug(1); /* [ADDED] activar debug por código */
 	if (check_args(ac, av) == -1)
-		printf("Los argumentos no son válidos\n");
-	else
-		printf("Los argumentos son válidos\n");
+		return (-1);
+	table = init_table(ac, av);
+	if (!table)
+		return (ft_perror("Error al inicializar la mesa.", -1));
+	table->start_time = get_time() + 100;
+	philos = init_philosophers(table);
+	if (!philos)
+	{
+		free_table(table);
+		return (ft_perror("Error al inicializar los filósofos.", -1));
+	}
+	create_and_join(table, philos);
+	free_philo(table, philos);
+	free_table(table);
+	return (0);
 }

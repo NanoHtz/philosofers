@@ -13,8 +13,77 @@
 #ifndef PHILOSOPHERS_H
 # define PHILOSOPHERS_H
 
-# include <stdio.h>
-
 # include "libft/libft.h"
+# include <stdio.h>
+# include <stdlib.h>
+# include <pthread.h>
+# include <sys/time.h>
+# include <string.h>
+
+# define E_ARGS "wrong number of arguments. Only 4 or 5 arguments"
+# define E_SIGN "Only digits."
+# define E_RANGE "Out of range (1-INT_MAX)."
+# define E_PHILO "El primer argumento debe ser mayor de 1."
+# define E_EMPTY "La cadena esta vacía"
+
+typedef struct s_table
+{
+	int				died;
+	int				num_philosophers;
+	long			time_to_die;
+	long			time_to_eat;
+	long			time_to_sleep;
+	int				must_eat;
+	pthread_mutex_t	*forks;
+	pthread_mutex_t	print_mutex;
+	pthread_mutex_t	died_mutex;
+	long			start_time;
+}	t_table;
+
+typedef struct s_philosopher
+{
+	int				id;
+	int				left_fork;
+	int				right_fork;
+	long			last_meal;
+	int				meals_eaten;
+	pthread_mutex_t	meal_mutex;
+	t_table			*table;
+	pthread_t		thread_id;
+}	t_philosopher;
+//debugs.c
+void    set_debug(int on);  /* [ADDED] 1 = ON, 0 = OFF */
+void    dbg_event(t_philosopher *p, const char *evt);                /* [ADDED] */
+void    dbg_snapshot(t_philosopher *ph, t_table *t, const char *tag);/* [ADDED] */
+//check_args.c
+int				is_number(char *av);
+int				check_args(int ac, char **av);
+//inits.c
+t_table			*init_table(int ac, char **av);
+t_philosopher	*init_philosophers(t_table *table);
+//frees.c
+void			free_philo(t_table *table, t_philosopher *philos);
+void			free_table(t_table *table);
+
+//control.c
+int				get_died(t_table *table);
+void			start_control(t_philosopher	*philos);
+void			*control_routine(void *arg);
+//eat.c
+void			eat(t_philosopher *philo);
+//routine.c
+void			*routine(void *arg);
+//sleep_and_think.c
+void			sleep_and_think(t_philosopher *philo);
+//take_forks.c
+void			unlock_fork(t_philosopher *philo, int fork_index);
+int				lock_fork(t_philosopher *philo, int fork_index);
+void			take_forks(t_philosopher *philo);
+void			unlock_forks(t_philosopher *philo);
+//utils.c
+void			set_died(t_table *table);
+long			get_time(void);
+long			ft_time(t_philosopher *philo);
+void			print_action(t_philosopher *philo, char *msg);
 
 #endif

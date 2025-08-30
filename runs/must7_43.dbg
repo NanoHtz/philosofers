@@ -1,0 +1,76 @@
+[DBG] 0 id=3 before_take  since_last=0  meals=0
+[DBG] 0 id=1 before_take  since_last=0  meals=0
+[DBG] 0 id=5 before_take  since_last=0  meals=0
+[DBG] 0 id=2 before_take  since_last=0  meals=0
+[DBG] 0 id=4 before_take  since_last=0  meals=0
+[DBG] 205 id=2 after_eat  since_last=200  meals=1
+[DBG] 205 id=4 after_eat  since_last=200  meals=1
+[DBG] 405 id=2 before_take  since_last=400  meals=1
+[DBG] 405 id=1 after_eat  since_last=200  meals=1
+[DBG] 406 id=4 before_take  since_last=401  meals=1
+[DBG] 406 id=3 after_eat  since_last=200  meals=1
+[DBG] 606 id=1 before_take  since_last=401  meals=1
+[DBG] 606 id=5 after_eat  since_last=200  meals=1
+[DBG] 608 id=3 before_take  since_last=402  meals=1
+[DBG] 608 id=2 after_eat  since_last=200  meals=2
+[DBG] 807 id=4 after_eat  since_last=200  meals=2
+[DBG] 807 id=5 before_take  since_last=401  meals=1
+[DBG] 808 id=2 before_take  since_last=400  meals=2
+[DBG] 906 id=1 after_eat  since_last=200  meals=2
+[DBG] 1007 id=4 before_take  since_last=400  meals=2
+[DBG] 1007 id=3 after_eat  since_last=200  meals=2
+[DBG] 1106 id=1 before_take  since_last=400  meals=2
+[DBG] 1108 id=5 after_eat  since_last=200  meals=2
+[DBG] 1208 id=2 after_eat  since_last=200  meals=3
+[DBG] 1208 id=3 before_take  since_last=401  meals=2
+[DBG] 1309 id=5 before_take  since_last=401  meals=2
+[DBG] 1309 id=4 after_eat  since_last=200  meals=3
+[DBG] 1408 id=1 after_eat  since_last=200  meals=3
+[DBG] 1408 id=2 before_take  since_last=400  meals=3
+[DBG] 1516 id=4 before_take  since_last=407  meals=3
+[DBG] 1516 id=3 after_eat  since_last=200  meals=3
+[DBG] 1608 id=1 before_take  since_last=400  meals=3
+[DBG] 1613 id=5 after_eat  since_last=200  meals=3
+[DBG] 1717 id=3 before_take  since_last=401  meals=3
+[DBG] 1717 id=2 after_eat  since_last=200  meals=4
+[DBG] 1813 id=5 before_take  since_last=400  meals=3
+[DBG] 1813 id=4 after_eat  since_last=200  meals=4
+[DBG] 1918 id=2 before_take  since_last=401  meals=4
+[DBG] 1918 id=1 after_eat  since_last=200  meals=4
+[DBG] 2015 id=4 before_take  since_last=402  meals=4
+[DBG] 2017 id=3 after_eat  since_last=200  meals=4
+[DBG] 2118 id=5 after_eat  since_last=200  meals=4
+[DBG] 2118 id=1 before_take  since_last=400  meals=4
+[DBG] 2218 id=2 after_eat  since_last=200  meals=5
+[DBG] 2218 id=3 before_take  since_last=401  meals=4
+[DBG] 2318 id=5 before_take  since_last=400  meals=4
+[DBG] 2318 id=4 after_eat  since_last=200  meals=5
+[DBG] 2418 id=2 before_take  since_last=400  meals=5
+[DBG] 2419 id=1 after_eat  since_last=200  meals=5
+[DBG] 2519 id=3 after_eat  since_last=200  meals=5
+[DBG] 2519 id=4 before_take  since_last=401  meals=5
+[DBG] 2620 id=5 after_eat  since_last=200  meals=5
+[DBG] 2620 id=1 before_take  since_last=401  meals=5
+[DBG] 2719 id=2 after_eat  since_last=200  meals=6
+[DBG] 2719 id=3 before_take  since_last=400  meals=5
+[DBG] 2821 id=5 before_take  since_last=401  meals=5
+[DBG] 2821 id=4 after_eat  since_last=200  meals=6
+[DBG] 2919 id=2 before_take  since_last=400  meals=6
+[DBG] 2921 id=1 after_eat  since_last=200  meals=6
+[DBG] 3023 id=4 before_take  since_last=402  meals=6
+[DBG] 3023 id=3 after_eat  since_last=200  meals=6
+[DBG] 3122 id=1 before_take  since_last=401  meals=6
+[DBG] 3122 id=5 after_eat  since_last=200  meals=6
+[DBG] 3224 id=3 before_take  since_last=401  meals=6
+[DBG] 3224 id=2 after_eat  since_last=200  meals=7
+[DBG] 3323 id=5 before_take  since_last=401  meals=6
+[DBG] 3323 id=4 after_eat  since_last=200  meals=7
+[DBG] 3425 id=1 after_eat  since_last=200  meals=7
+[DBG] SNAP ALL_REACHED @3426ms
+  ph01  meals=7  since_last=201
+  ph02  meals=7  since_last=402
+  ph03  meals=7  since_last=102
+  ph04  meals=7  since_last=303
+  ph05  meals=7  since_last=1
+[DBG] 3427 id=5 after_eat  since_last=2  meals=7
+[DBG] 3427 id=3 after_eat  since_last=103  meals=7

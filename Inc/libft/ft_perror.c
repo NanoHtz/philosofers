@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgalvez- <fgalvez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 18:55:21 by fgalvez-          #+#    #+#             */
-/*   Updated: 2024/12/05 14:53:53 by fgalvez-         ###   ########.fr       */
+/*   Created: 2024/11/21 21:16:53 by fgalvez-          #+#    #+#             */
+/*   Updated: 2024/12/05 13:54:38 by fgalvez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stddef.h>
-# include <unistd.h>
-# include <limits.h>
+static void	ft_strendl(const char *str)
+{
+	int	i;
 
-int		ft_isdigit(int x);
-int		ft_atoi(const char *nptr);
-long	ft_atol(const char *nptr);
-int		ft_perror(char *str, int n);
-void	ft_putstr(char *str);
+	i = 0;
+	while (str[i] != '\0')
+	{
+		write(2, &str[i], 1);
+		i++;
+	}
+	write(2, "\n", 1);
+}
 
-#endif
+int	ft_perror(char *str, int n)
+{
+	write(2, "Error: ", 7);
+	ft_strendl(str);
+	return (n);
+}

@@ -6,15 +6,15 @@
 #    By: fgalvez- <fgalvez-@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/08 14:04:17 by fgalvez-          #+#    #+#              #
-#    Updated: 2025/05/21 17:56:58 by fgalvez-         ###   ########.fr        #
+#    Updated: 2025/08/30 11:01:07 by fgalvez-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # ========================= VARIABLES GLOBALES =============================== #
 
-NAME         = philosophers
+NAME         = philo
 CC           = cc
-CFLAGS       = -Wall -Wextra -Werror -g -O0
+CFLAGS       = -Wall -Wextra -Werror -g -O0 -DPHILO_DEBUG
 
 LIBS_FLAGS   = -L$(DIR_LIBFT) -lft \
                -L$(DIR_UTILS) -lutils \
@@ -30,14 +30,24 @@ DIR_HEADERS = Inc/Inc/libft
 DIR_LIBFT   = Inc/libft/
 DIR_PHILO   = Inc/
 DIR_UTILS   = Inc/utils/
+DIRSOURCE   = src/
 
 HEADERS = $(DIR_UTILS)errors.h \
 			$(DIR_PHILO)philosophers.h \
-			$(DIR_LIBFT)libft.h \
+			$(DIR_LIBFT)libft.h
 
-DIRSOURCE   = src/
+SOURCES = $(DIRSOURCE)main.c \
+			$(DIRSOURCE)check_args.c \
+			$(DIRSOURCE)inits.c \
+			$(DIRSOURCE)routine.c \
+			$(DIRSOURCE)utils.c \
+			$(DIRSOURCE)take_forks.c \
+			$(DIRSOURCE)eat.c \
+			$(DIRSOURCE)frees.c \
+			$(DIRSOURCE)sleep_and_think.c \
+			$(DIRSOURCE)debugs.c \
+			$(DIRSOURCE)control.c
 
-SOURCES = $(DIRSOURCE)main.c
 
 # ========================= OBJETOS =========================== #
 

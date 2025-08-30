@@ -1,0 +1,235 @@
+0 4 has taken a fork
+1 4 has taken a fork
+1 4 is eating
+2 2 has taken a fork
+2 2 has taken a fork
+2 2 is eating
+101 5 has taken a fork
+201 4 put down a fork
+201 4 put down a fork
+201 4 is sleeping
+202 5 has taken a fork
+202 5 is eating
+202 2 put down a fork
+202 2 put down a fork
+202 2 is sleeping
+203 3 has taken a fork
+203 3 has taken a fork
+203 3 is eating
+401 4 is thinking
+402 2 is thinking
+402 5 put down a fork
+402 5 put down a fork
+402 5 is sleeping
+402 1 has taken a fork
+402 1 has taken a fork
+402 1 is eating
+403 3 put down a fork
+403 3 put down a fork
+403 3 is sleeping
+403 4 has taken a fork
+403 4 has taken a fork
+403 4 is eating
+602 5 is thinking
+603 3 is thinking
+603 1 put down a fork
+603 1 put down a fork
+603 1 is sleeping
+603 2 has taken a fork
+603 2 has taken a fork
+603 2 is eating
+604 4 put down a fork
+604 4 put down a fork
+604 4 is sleeping
+702 5 has taken a fork
+702 5 has taken a fork
+702 5 is eating
+803 1 is thinking
+803 2 put down a fork
+803 2 put down a fork
+803 2 is sleeping
+803 3 has taken a fork
+803 3 has taken a fork
+803 3 is eating
+804 4 is thinking
+902 5 put down a fork
+902 5 put down a fork
+902 5 is sleeping
+903 1 has taken a fork
+903 1 has taken a fork
+903 1 is eating
+1003 2 is thinking
+1003 3 put down a fork
+1003 3 put down a fork
+1003 3 is sleeping
+1003 4 has taken a fork
+1003 4 has taken a fork
+1003 4 is eating
+1102 5 is thinking
+1103 1 put down a fork
+1103 1 put down a fork
+1103 1 is sleeping
+1103 2 has taken a fork
+1103 2 has taken a fork
+1103 2 is eating
+1202 5 has taken a fork
+1203 3 is thinking
+1204 4 put down a fork
+1204 4 put down a fork
+1204 4 is sleeping
+1204 5 has taken a fork
+1204 5 is eating
+1303 1 is thinking
+1303 2 put down a fork
+1303 2 put down a fork
+1303 2 is sleeping
+1304 3 has taken a fork
+1304 3 has taken a fork
+1304 3 is eating
+1404 4 is thinking
+1404 5 put down a fork
+1404 5 put down a fork
+1404 5 is sleeping
+1404 1 has taken a fork
+1404 1 has taken a fork
+1404 1 is eating
+1503 2 is thinking
+1504 3 put down a fork
+1504 3 put down a fork
+1504 3 is sleeping
+1504 4 has taken a fork
+1504 4 has taken a fork
+1504 4 is eating
+1604 5 is thinking
+1604 1 put down a fork
+1604 1 put down a fork
+1604 1 is sleeping
+1604 2 has taken a fork
+1604 2 has taken a fork
+1604 2 is eating
+1704 5 has taken a fork
+1704 3 is thinking
+1704 4 put down a fork
+1704 4 put down a fork
+1704 4 is sleeping
+1704 5 has taken a fork
+1704 5 is eating
+1804 1 is thinking
+1804 2 put down a fork
+1804 2 put down a fork
+1804 2 is sleeping
+1804 3 has taken a fork
+1804 3 has taken a fork
+1804 3 is eating
+1904 4 is thinking
+1905 5 put down a fork
+1905 5 put down a fork
+1905 5 is sleeping
+1905 1 has taken a fork
+1905 1 has taken a fork
+1905 1 is eating
+2004 2 is thinking
+2004 3 put down a fork
+2004 3 put down a fork
+2004 3 is sleeping
+2004 4 has taken a fork
+2004 4 has taken a fork
+2004 4 is eating
+2105 5 is thinking
+2105 1 put down a fork
+2105 1 put down a fork
+2105 1 is sleeping
+2105 2 has taken a fork
+2105 2 has taken a fork
+2105 2 is eating
+2204 3 is thinking
+2204 4 put down a fork
+2204 4 put down a fork
+2204 4 is sleeping
+2206 5 has taken a fork
+2206 5 has taken a fork
+2206 5 is eating
+2305 1 is thinking
+2305 2 put down a fork
+2305 2 put down a fork
+2305 2 is sleeping
+2305 3 has taken a fork
+2305 3 has taken a fork
+2305 3 is eating
+2404 4 is thinking
+2406 5 put down a fork
+2406 5 put down a fork
+2406 5 is sleeping
+2406 1 has taken a fork
+2406 1 has taken a fork
+2406 1 is eating
+2505 2 is thinking
+2505 3 put down a fork
+2506 3 put down a fork
+2506 3 is sleeping
+2506 4 has taken a fork
+2506 4 has taken a fork
+2506 4 is eating
+2606 5 is thinking
+2606 1 put down a fork
+2606 1 put down a fork
+2606 1 is sleeping
+2606 2 has taken a fork
+2606 2 has taken a fork
+2606 2 is eating
+2706 3 is thinking
+2707 4 put down a fork
+2707 4 put down a fork
+2707 4 is sleeping
+2707 5 has taken a fork
+2707 5 has taken a fork
+2707 5 is eating
+2806 1 is thinking
+2806 2 put down a fork
+2806 2 put down a fork
+2806 2 is sleeping
+2808 3 has taken a fork
+2808 3 has taken a fork
+2808 3 is eating
+2907 4 is thinking
+2907 5 put down a fork
+2907 1 has taken a fork
+2908 1 has taken a fork
+2908 5 put down a fork
+2908 5 is sleeping
+2908 1 is eating
+3006 2 is thinking
+3009 3 put down a fork
+3009 4 has taken a fork
+3009 4 has taken a fork
+3009 4 is eating
+3009 3 put down a fork
+3009 3 is sleeping
+3108 5 is thinking
+3108 1 put down a fork
+3109 1 put down a fork
+3109 1 is sleeping
+3109 2 has taken a fork
+3109 2 has taken a fork
+3109 2 is eating
+3209 5 has taken a fork
+3209 3 is thinking
+3209 4 put down a fork
+3209 4 put down a fork
+3209 4 is sleeping
+3209 5 has taken a fork
+3209 5 is eating
+3309 1 is thinking
+3309 2 put down a fork
+3309 2 put down a fork
+3309 2 is sleeping
+3310 3 has taken a fork
+3310 3 has taken a fork
+3310 3 is eating
+3409 4 is thinking
+3409 5 put down a fork
+3409 5 put down a fork
+3409 5 is sleeping
+3410 1 has taken a fork
+3410 1 has taken a fork
+3410 1 is eating
